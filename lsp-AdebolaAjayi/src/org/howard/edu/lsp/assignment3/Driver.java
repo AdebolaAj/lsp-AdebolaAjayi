@@ -33,10 +33,38 @@ public class Driver {
         int targetSum2 = 6;
         
      // call the combo_finder method to get the combinations
-        ArrayList<ArrayList<Integer>> combinations2 = combo.combo_finder(integers, targetSum);
+        ArrayList<ArrayList<Integer>> combinations2 = combo.combo_finder(integers2, targetSum2);
       //call the printCombo method to print the combinations.
-        combo.printCombo(integers, combinations);
+        combo.printCombo(integers2, combinations2);
+        
+     // Add numbers to the arraylist
+        ArrayList<Integer> integers3 = new ArrayList<>();
+        integers3.add(3);
+        integers3.add(2);
+        integers3.add(3);
+        integers3.add(4);
+        int targetSum3 = 6;
+        
+     // call the combo_finder method to get the combinations
+        ArrayList<ArrayList<Integer>> combinations3 = combo.combo_finder(integers3, targetSum3);
+      //call the printCombo method to print the combinations.
+        combo.printCombo(integers3, combinations3);
+        
+     // Add numbers to the arraylist
+        ArrayList<Integer> integers4 = new ArrayList<>();
+        integers4.add(-1);
+        integers4.add(0);
+        integers4.add(1);
+        integers4.add(-2);
+        int targetSum4 = 1;
+        
+     // call the combo_finder method to get the combinations
+        ArrayList<ArrayList<Integer>> combinations4 = combo.combo_finder(integers4, targetSum4);
+      //call the printCombo method to print the combinations.
+        combo.printCombo(integers4, combinations4);
     }
+	
+	
 
 }
 

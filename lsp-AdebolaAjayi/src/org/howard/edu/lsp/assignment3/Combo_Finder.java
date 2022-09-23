@@ -11,7 +11,7 @@ public class Combo_Finder {
 		   - Returns the combinations as an ArrayList<ArrayList<Integer>>
 		   - Each combination contains the indices of the elements that add up to the target sum */
 
-        ArrayList<Integer> seen = new ArrayList<Integer>();	// A List to keep track of the integers seen thus far
+        ArrayList<Integer> found = new ArrayList<Integer>();	// A List to keep track of the integers seen thus far
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();	// A list of lists to store the combinations
         for (int i = 0; i < array.size(); i++) {
             if (array.get(i) >= 0) {	// Check for deprecated element: we will deprecated an element by setting its value to -1
@@ -22,9 +22,9 @@ public class Combo_Finder {
                         result.add(combo); 		 	// if it is not already present in result
                     }
                 } else {
-                    int newTarget = target - array.get(i); 	// Check is there is an element (partialTarget) in the array that when added
-                    if ((seen.contains(newTarget)) && (i != seen.indexOf(newTarget))){	// to the current element equals the target sum
-                        int index = seen.indexOf(newTarget);	// If there is create a list of the indices of the pair
+                    int newTarget = target - array.get(i); 	// Check is there is an element (target) in the array that when added
+                    if ((found.contains(newTarget)) && (i != found.indexOf(newTarget))){	// to the current element equals the target sum
+                        int index = found.indexOf(newTarget);	// If there is create a list of the indices of the pair
                         combo.add(i);
                         combo.add(index);
                         Collections.sort(combo);				// Sort the list to help with comparison
@@ -32,7 +32,7 @@ public class Combo_Finder {
                             result.add(combo);				// add it to result as a new combination
                         }
                     } else {
-                        seen.add(array.get(i));		// Add the current element to the list of seen elements
+                    	found.add(array.get(i));		// Add the current element to the list of found elements
                         if (newTarget > 0) {	// Base case for recursion call
                             ArrayList<Integer> newArray = new ArrayList<Integer>(array.size());
                             for (int x : array) {	// Create a copy of the array
@@ -66,16 +66,16 @@ public class Combo_Finder {
         });
 
         int max_index = array.size() - 1;
-        int max_index_value = noOfDigits(max_index);
-        
-        int max = array.get(0);
-        for (int x : array) {
-            if (x > max) {
-                max = x;
-            }
+        if (max_index == 0) {
+            int max_index_value = 1;
         }
-        int maxNum_value = noOfDigits(max);
+        int counter = 0;
+        while (max_index > 0) {
+            counter += 1;
+            max_index /= 10;
+        }
         
+        int max_index_value = counter;
         
         
         System.out.println("\nCombinations:");
@@ -97,19 +97,6 @@ public class Combo_Finder {
             
         }
     }
-
-    public static int noOfDigits(int number) {
-        if (number == 0) {
-            return 1;
-        }
-        int counter = 0;
-        while (number > 0) {
-            counter += 1;
-            number /= 10;
-        }
-        return counter;
-    }
-
 
 
 }
