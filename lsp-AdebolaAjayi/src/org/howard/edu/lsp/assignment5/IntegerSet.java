@@ -1,4 +1,4 @@
-package org.howard.edu.lsp.assignment4.implementation;
+package org.howard.edu.lsp.assignment5;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -132,7 +132,7 @@ private ArrayList<Integer> set = new ArrayList<Integer>();
         
         if (this.contains(item)) {
         	int index = this.set.indexOf(item);
-            this.set.remove((index));
+            this.set.remove(index);
         }
     }
     /**
