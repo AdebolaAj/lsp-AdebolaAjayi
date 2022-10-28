@@ -21,5 +21,17 @@ public class PersonTest {
 		assertEquals("Adebola, 20, 111-11-1111", person.toString());
 	}
 	
+	@Test 
+	@DisplayName("PersonTest.equal Test case")
+	public void testEqual() {
+		Person person = new Person("Adebola", "111-11-1111", 20);
+		String person2 = "Adebola, 20, 111-11-1111";
+		Person person3 = new Person("Aj", "111-11-1111", 30);
+		
+		assertEquals(false, person.equals(person2));
+		assertEquals(true, person.equals(person3));
+	}
+	
+	
 
 }

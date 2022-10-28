@@ -8,9 +8,9 @@ public class Person {
 
 			public Person(String name,  String socialSecurityNumber, int age) {
 				// initialize private variables
-				name = name;
-				age = age;
-				socialSecurityNumber = socialSecurityNumber;
+				this.name = name;
+				this.age = age;
+				this.socialSecurityNumber = socialSecurityNumber;
 			}
 		public String toString()
 		{	Integer num = age;
