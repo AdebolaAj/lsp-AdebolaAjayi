@@ -3,7 +3,6 @@ package org.howard.edu.lsp.assignment7;
 import java.util.Collections;
 import java.util.List;
 
-import org.howard.edu.lsp.midterm.problem1.UnknownCandidateException;
 
 class ClassAverageDT implements AverageStrategy{
 	@Override

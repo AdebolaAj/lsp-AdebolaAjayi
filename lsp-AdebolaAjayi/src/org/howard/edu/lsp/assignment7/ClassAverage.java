@@ -2,7 +2,6 @@ package org.howard.edu.lsp.assignment7;
 
 import java.util.List;
 
-import org.howard.edu.lsp.midterm.problem1.UnknownCandidateException;
 
 class ClassAverage implements AverageStrategy{
 	@Override
